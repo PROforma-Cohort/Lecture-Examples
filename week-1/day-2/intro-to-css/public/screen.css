@@ -1,0 +1,32 @@
+html {
+  height: 100%;
+  /* border: 10px solid red; */
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font: 16px / 1 sans-serif;
+}
+
+section{
+  margin:1.5em;
+  border:3px dashed aqua;
+  padding:3em 0em;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.header-row {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+}
+
+.header-row > h1 {
+  flex-basis: 30%;
+  color: red;
+  background-image:  url('./images/harp.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
