@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "deploy": "surge ./public --domain mcdonalds.markt.surge.sh",
+    "start": "browser-sync start --server 'public' --files 'public'"
+  },
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "stylelint": "^9.1.1",
+    "stylelint-config-standard": "^18.2.0",
+    "surge": "^0.20.1"
+  }
+}

@@ -1,0 +1,29 @@
+html {
+  height: 100%;
+}
+
+.body {
+  margin: 0;
+  min-height: 100%;
+  font: 16px / 1 serif;
+  font-weight: 50;
+  color: yellow;
+  background-color: black;
+}
+
+.flex-centered{
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  justify-content: center;
+}
+
+.section{
+  background-color: red;
+  padding:5em;
+}
+
+.header {
+  font-size:2em;
+  margin:0;
+}
