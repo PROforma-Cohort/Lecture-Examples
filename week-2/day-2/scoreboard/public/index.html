@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scoreboard</title>
+  <link rel="stylesheet" href="./screen.css">
+</head>
+
+<body>
+  <header>
+    <h1>My Cool ScoreBoard</h1>
+  </header>
+  <section class="scoreboard">
+    <section class="team-score">
+      <header id="homeTeamName">
+        Home Team
+      </header>
+      <section>
+        <span id="homeTeamScore">No Score</span>
+      </section>
+    </section>
+    <section class="timer">
+      <h2 class="seconds">100</h2>
+      <button id="startButton" onclick="main()">Start!</button>
+      <h2>Quarter</h2>
+      <h2 class="quarter">1</h2>
+
+    </section>
+    <section class="team-score">
+      <header>
+        Away Team
+      </header>
+      <section>
+        <span>0</span>
+      </section>
+    </section>
+  </section>
+  <section class="scoreboard">
+    <form action="">
+      <label for="">Home Team name:</label>
+      <input type="text" id="homeTeamNameTextBox" />
+      <button type="button" onclick="updateHomeTeamName()">Update Home Name</button>
+      <button type="button" onclick="homeTeamAddScoreClick()">Add Score</button>
+      <button type="button" onclick="homeTeamRemoveScoreClick()">Remove Score</button>
+    </form>
+
+    <form action="">
+      <label for="">Away Team name:</label>
+      <input type="text" />
+      <button class="updateAwayName">Update Away Name</button>
+      <button>Add Score</button>
+      <button>Remove Score</button>
+    </form>
+  </section>
+  <section>
+    <ul id="scoreLog"></ul>
+  </section>
+  <script src="./main.js" charset="utf-8"></script>
+</body>
+
+</html>
