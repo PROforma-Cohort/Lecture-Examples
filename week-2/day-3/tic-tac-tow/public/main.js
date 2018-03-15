@@ -1,14 +1,23 @@
-// implement `who won` logic
-const player1Selection = (choice) => {
-  const player1Choice = choice
-  console.log("Player choose = " + player1Choice);
-  playGame(player1Choice);
+const game = {
+  player:"",
+  computer: "",
+  gameCounter:0
 }
 
-const playGame = (playerChoice) => {
-  const computerChoice = computersSelection();
-  console.log("player :" + playerChoice + " computer: " + computerChoice);
-  const results = compareResults(playerChoice, computerChoice);
+
+// implement `who won` logic
+const player1Selection = (choice) => {
+  game.player = choice;
+  choice = game.player;
+  console.log("Player choose = " + game.player);
+  playGame();
+}
+
+const playGame = () => {
+  game.computer = computersSelection();
+  console.log("player :" + game.player + " computer: " + game.computer);
+  const results = compareResults(game);
+  game.gameCounter++;
   displayResults(results);
 }
 
@@ -16,7 +25,10 @@ const displayResults = (result) =>{
   alert(result);
 }
 
-const compareResults = (player1Choice, player2Choice) => {
+const compareResults = (game) => {
+  const player1Choice = game.player;
+  const player2Choice = game.computer;
+
   if (player1Choice === player2Choice) {
     return "tie";
   }
@@ -58,5 +70,4 @@ const computersSelection = () => {
     return "scissor"
   }
   // return a result
-
 }
