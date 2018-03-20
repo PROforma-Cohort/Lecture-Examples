@@ -5,7 +5,7 @@
     - how to call functions and how to approach this
 - finding the value of the last item in the array 
 - disabling buttons ======> best way to hide and show buttons
-- once a card was played... slice-ing! (and splice-ing!!!)
+x once a card was played... slice-ing! (and splice-ing!!!)
     - (how to manage the deck)
 - separation of concerns
 - Storing shared data on a page

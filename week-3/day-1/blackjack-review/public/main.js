@@ -97,6 +97,23 @@ const hideElement = (selector) => {
   btn.classList.add("hide");
 }
 
+const addHitOrStayButtons = () => {
+  const hitButton  = document.createElement("button"); 
+  hitButton.textContent = "hit me";
+  hitButton.onclick = () => {
+    console.log("hide was clicked")
+  }
+  const stayButton  = document.createElement("button"); 
+  stayButton.textContent = "stay"
+
+  stayButton.onclick = () => {
+    console.log("stay was clicked");
+  }
+  const parent = document.querySelector(".player-buttons");
+  parent.appendChild(hitButton);
+  parent.appendChild(stayButton);
+}
+
 const startGame = () => {
   console.log("starting Game");
   createDeck();
@@ -109,4 +126,5 @@ const startGame = () => {
   addHandToDOM(".player-hand", player1.hand)
   addHandToDOM(".house-hand", house.hand)
   hideElement("#startButton");
+  addHitOrStayButtons();
 }
