@@ -66,8 +66,18 @@ const shuffle = () => {
   }
 }
 
+// IDEA: make a new function to deal 1 card and use that 
+const getTopXCardsFromDeck = (number) => {
+  const newCards = [] ;
+  for (let i = 0; i < number; i++) {
+    newCards.push(shuffledDeck.pop())    
+  }
+  return newCards;
+}
+//IDEA: duplicate logic in hand 
+// IDEA: pass a parameter with a number of cards to deal 
 const dealInitHand = () =>{
- return [shuffledDeck.pop(), shuffledDeck.pop()];
+ return getTopXCardsFromDeck(2);
 }
 
 const dealStartingHandToPlayer = () => {
@@ -82,7 +92,8 @@ const dealStartingHandToHouse = () => {
 const addHandToDOM = (parentClass, hand) => {
   const parent = document.querySelector(parentClass)
   // foreach item in player hand, 
-  console.log(hand);
+  console.log("add hand to dom: ", hand);
+  parent.textContent = "";
   for (let i = 0; i < hand.length; i++) {
     const card = hand[i];
     // create a new element, add it to the list
@@ -97,12 +108,49 @@ const hideElement = (selector) => {
   btn.classList.add("hide");
 }
 
+const getCardValue = (card) => {
+  let value = 0;
+  if (card.rank == "ace"){
+    value = 11;
+  } else if (card.rank == "k" || card.rank == "q" || card.rank == "j"){
+    value = 10
+  } else {
+    value = parseInt(card.rank);
+  }
+  return value;
+}
+
+// 3 clubs, 7 of hearts
+const calculateHandTotal = (hand) => {
+    return hand.reduce((total, card) => {
+        return total += getCardValue(card);
+    },0);
+
+    let total = 0;
+    for (let i = 0; i < hand.length; i++) {
+      const card = hand[i];
+      total += getCardValue(card);
+    }
+    return total; 
+}
+
+const hitLogic = () => {
+  console.log("hit was clicked");
+  // deal our cards
+  player1.hand = player1.hand.concat(getTopXCardsFromDeck(1));
+  //update the player hand on the screen
+  addHandToDOM(".player-hand", player1.hand);
+  // calculate hand total
+
+  // check if busted 
+}
+
 const addHitOrStayButtons = () => {
   const hitButton  = document.createElement("button"); 
   hitButton.textContent = "hit me";
-  hitButton.onclick = () => {
-    console.log("hide was clicked")
-  }
+  
+  hitButton.onclick = hitLogic;
+
   const stayButton  = document.createElement("button"); 
   stayButton.textContent = "stay"
 
