@@ -1,0 +1,1 @@
+Today we did more `Blackjack` review, as well as discussed project management
