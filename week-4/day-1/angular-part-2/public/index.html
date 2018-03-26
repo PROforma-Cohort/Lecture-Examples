@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Part 2</title>
+    <link rel="stylesheet" href="./screen.css">
+  </head>
+  <body ng-app="contactListApp" ng-controller="peopleListController">
+    <h1>My contacts</h1>
+    <section>
+      <div ng-repeat="person in contactList track by $index">
+        {{person.name}} is {{person.age}} yrs old
+        <span ng-show="person.age >= 21"><b>can have a wine with dinner</b></span>
+        <span class="box" ng-hide="person.age <=55"><b>can order from the senior citizens menu</b></span>
+      </div>
+    </section>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./main.js" charset="utf-8"></script>
+  </body>
+</html>

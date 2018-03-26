@@ -3,8 +3,8 @@ const getRandomNumber = () => {
 }
 
 
-angular.
-  module("helloWorldApp",[])
+angular
+  .module("helloWorldApp",[])
   .controller("mainController", ($scope) => {
     
     // not able to be used in the DOM
@@ -31,7 +31,7 @@ angular.
     }
 
 
-    
+
 
 
     // $scope.searchValue = "This should go into my search box";
