@@ -1,29 +1,51 @@
 <!DOCTYPE html>
-<html >
-  <head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Intro To Angular</title>
-    <link rel="stylesheet" href="./screen.css">
-  </head>
-  <body ng-app="helloWorldApp" ng-controller="mainController">
-    <h1>Hello, World!</h1>
+<html>
 
-    <h3>The current time is : {{currentTime}}</h3>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intro To Angular</title>
+  <link rel="stylesheet" href="./screen.css">
+</head>
+
+<body ng-app="helloWorldApp" ng-controller="mainController">
+  <h1>Hello, World!</h1>
+
+
+
+  <hr/>
+<!-- lists -->
+<button ng-click="addRandomNumber()">Add Number To List</button>
+<button ng-click="update3Value()">Update the third value by 3</button>
+<ul>
+    <!-- <li ng-repeat="[local varible] in [array] track by $index"> -->
+    
+    <li ng-repeat="x in numbers track by $index">
+      {{x}} is your number
+      <button ng-click="addOneToThisValue($index)">+1</button>
+    </li>
+  </ul>
+
+<hr>
+
+  <h3>The current time is : {{currentTime}}</h3>
+  <section>
+    <input type="text" name="" id="" ng-model="searchValue">
     <section>
-      <input type="text" name="" id="" ng-model="searchValue">
-      <section>
-        the value of the text is : {{searchValue}}
-      </section>
-      <section>
-        enter your name:
-        <input type="text" name="" id="" ng-model="name">
-        <button ng-click="updateName()">Update Name</button>
-        Hello, {{displayName}}
-      </section>
-      <input type="text" name="" id="">
+      the value of the text is : {{searchValue}}
     </section>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="./main.js" charset="utf-8"></script>
-  </body>
+    <section>
+      enter your name:
+      <input type="text" name="" id="" ng-model="name">
+      <button ng-click="updateName()">Update Name</button>
+      Hello, {{displayName}}
+    </section>
+    <input type="text" name="" id="">
+    <hr>
+    
+  </section>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="./main.js" charset="utf-8"></script>
+</body>
+
 </html>
