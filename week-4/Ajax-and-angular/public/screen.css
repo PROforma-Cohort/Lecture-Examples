@@ -1,0 +1,31 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font: 16px / 1 sans-serif;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+button{
+  margin:0.25em;
+  border-radius: 50px;
+}
+
+.movie {
+  background-color: black;
+  color:gold;
+  font-weight: bold;
+  text-align:center; 
+}
+
+.movie header{
+  font-size: 3em;  
+}

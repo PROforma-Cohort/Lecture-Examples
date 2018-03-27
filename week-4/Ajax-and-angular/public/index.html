@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ajax And Angular</title>
+    <link rel="stylesheet" href="./screen.css">
+  </head>
+  <!-- create button per film, and when that button is clicked,
+    we load data from the API for that film and we will display....
+    at least the name
+  -->
+  <body ng-app="mainApp" ng-controller="mainController">
+    <h1>Hello, World!</h1>
+    <section class="button-container">
+      <button ng-repeat="movie in movies track by $index"
+      ng-click="loadMovie(movie.url)">
+      {{movie.title}}
+    </button>
+  </section>
+    <!-- movie data will show -->
+    <section class="movie"> 
+      <header>{{movie.title}}</header>
+      <section>{{movie.opening_crawl}}</section>
+      <section>
+        <header> Characters</header>
+        <section ng-repeat="character in movie.characters track by $index">
+          <button ng-click="loadCharacter(character)">{{character}}</button>
+        </section>
+        <section>
+          {{character.name}}
+          <br/>
+          {{character.mass}}
+        </section>
+      </section>
+    </section>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./main.js" charset="utf-8"></script>  </body>
+</html>
