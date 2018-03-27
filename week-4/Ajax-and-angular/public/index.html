@@ -11,7 +11,22 @@
     at least the name
   -->
   <body ng-app="mainApp" ng-controller="mainController">
-    <h1>Hello, World!</h1>
+    <h2>Template Example!</h2>
+    <!-- i want to display all the info i can get for each movie 
+      - title
+      - epidosid id
+      - relase date
+    -->
+    <section 
+      ng-repeat="movie in movies track by $index"
+      ng-include='"./templates/movie.html"'
+    >
+    </section>
+
+
+
+    <hr/>
+    <h2>First example:</h2>
     <section class="button-container">
       <button ng-repeat="movie in movies track by $index"
       ng-click="loadMovie(movie.url)">

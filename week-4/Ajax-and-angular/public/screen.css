@@ -29,3 +29,8 @@ button{
 .movie header{
   font-size: 3em;  
 }
+
+.movie-card{
+  border: 3px dotted fuchsia;
+  margin:0.5em;
+}
