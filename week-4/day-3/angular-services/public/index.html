@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Services</title>
+    <link rel="stylesheet" href="./screen.css">
+  </head>
+  <body ng-app="main" ng-controller="mainController">
+    <h1>Calculator!</h1>
+
+      <section>
+          <input type="text" ng-model="number1" placeholder="first number">
+          <input type="text" ng-model="number2" placeholder="second number">
+          <input type="text" ng-model="number3" placeholder="third number">
+      </section>
+      <section>
+        <button ng-click="otherAdd()">Add</button>
+        <button ng-click="subtractNumbers()">subtract</button>
+      </section>
+      <section ng-class="{'big-text': true, positive:answerIsPostive, negative:answer < 0}">
+         {{answer | formatAnswer}}
+      </section>
+
+      <section ng-show="answer < 0">
+        Oh no you are in the red! thats not cool...
+      </section>
+
+      <section ng-show="answerIsPostive">
+        You are in the green #winning.
+      </section>
+
+
+      <section>
+        <input type="text" ng-model="searchTerm">
+        <ul>
+          <li ng-repeat="name in names | filter:searchTerm">{{name}}</li>
+        </ul>
+      </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="./main.js" charset="utf-8"></script>
+  </body>
+</html>
