@@ -8,6 +8,31 @@
   </head>
   <body ng-app="main" ng-controller="mainController">
     <h1>{{title}}</h1>
+    <section>
+      current score: ${{player.score}} 
+    </section>
+    <section class="game-board" ng-hide="questionWasSelected">
+      <section class="category">
+        <header class="category-title">{{category.title}}</header>
+        <section class="question" ng-repeat="clue in category.clues track by $index">
+            <section ng-hide="clue.answered" ng-click="questionSelected(clue)">
+              ${{clue.value}}
+            </section>
+            <section style="height: 1em" ng-show="clue.answered">
+              
+            </section>
+        </section>
+      </section>
+    </section>
+    <section ng-show="questionWasSelected">
+      The category is {{category.title}}.
+      Answer this for ${{selectedQuestion.value}}:<br/> 
+      {{selectedQuestion.question}}
+
+      your answer: 
+      <input type="text" ng-model="userAnswer">
+      <button ng-click="checkAnswer()">submit</button>
+    </section>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
     <script src="./main.js" charset="utf-8"></script>
