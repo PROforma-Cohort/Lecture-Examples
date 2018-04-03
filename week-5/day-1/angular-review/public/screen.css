@@ -7,3 +7,12 @@ body {
   min-height: 100%;
   font: 16px / 1 sans-serif;
 }
+
+.game-board{
+  display: flex;
+  margin:4em;
+}
+
+.category{
+  margin:1em;
+}

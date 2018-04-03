@@ -12,7 +12,7 @@
       current score: ${{player.score}} 
     </section>
     <section class="game-board" ng-hide="questionWasSelected">
-      <section class="category">
+      <section class="category" ng-repeat="category in game.categories track by $index">
         <header class="category-title">{{category.title}}</header>
         <section class="question" ng-repeat="clue in category.clues track by $index">
             <section ng-hide="clue.answered" ng-click="questionSelected(clue)">
