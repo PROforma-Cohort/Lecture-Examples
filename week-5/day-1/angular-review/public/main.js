@@ -38,7 +38,7 @@ app.controller("mainController", [
       })
 
     }
-    
+
     $scope.questionSelected = (clue) => {
       console.log("asking", clue);
       $scope.questionWasSelected = true;
@@ -47,6 +47,7 @@ app.controller("mainController", [
 
     $scope.checkAnswer = () => {
       // compare, userAnswer with selectedQuestionAnswer
+      // we had extra words that were the not the anwers
       const isCorrect = $scope
         .userAnswer
         .toLowerCase() === $scope
