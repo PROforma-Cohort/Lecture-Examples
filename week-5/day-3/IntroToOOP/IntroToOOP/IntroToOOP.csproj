@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1D6A09B5-F8AA-4F32-9885-6DC534859530}</ProjectGuid>
+    <ProjectGuid>{5F40B49A-6484-4E14-A439-1291A56691AA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ListsAndDictionarys</RootNamespace>
-    <AssemblyName>ListsAndDictionarys</AssemblyName>
+    <RootNamespace>IntroToOOP</RootNamespace>
+    <AssemblyName>IntroToOOP</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mood.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Pets.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

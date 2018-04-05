@@ -112,6 +112,7 @@ namespace ListsAndDictionarys
                 }
 
             }
+            var value = Convert.ToChar("h");
             Console.WriteLine("Goodbye");
         }
     }
