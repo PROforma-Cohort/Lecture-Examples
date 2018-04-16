@@ -20,6 +20,18 @@ namespace IntroToSQL
     class Program
     {
 
+        // QUESTION: How to work with FK
+           
+        static void AdoptDog(string dogName, string rescuerName)
+        {
+            // whats the ID for the dog
+            // whats the ID for the rescuer
+
+            // insert and "do the adoption"
+
+        }
+
+
         static List<Dog> GetAllDogs(SqlConnection conn)
         {
             // Query the database
@@ -27,15 +39,17 @@ namespace IntroToSQL
                 " FROM Dogs" +
                 " LEFT JOIN Rescuers ON Dogs.RescuerID = Rescuers.Id";
             var query = new SqlCommand(_select, conn);
-            var reader = query.ExecuteReader();
-            var _rv = new List<Dog>();
-            // parse the results
-            while (reader.Read())
+            using (var reader = query.ExecuteReader())
             {
-                var _dog = new Dog(reader);
-                Console.WriteLine(_dog.Name + " has " + _dog.FurColor + "colored hair" + " Was adopted by" + _dog.Owner);
+                var _rv = new List<Dog>();
+                // parse the results
+                while (reader.Read())
+                {
+                    var _dog = new Dog(reader);
+                    Console.WriteLine(_dog.Name + " has " + _dog.FurColor + "colored hair" + " Was adopted by" + _dog.Owner);
+                }
+                return _rv;
             }
-            return _rv;
         }
 
 
@@ -66,7 +80,7 @@ namespace IntroToSQL
             {
                 var newestDog = new Dog
                 {
-                    Name = "New dog at " + DateTime.Now, 
+                    Name = "New dog at " + DateTime.Now,
                     FurColor = "Blonde",
                     IsAGoodBoy = true,
                 };
@@ -80,7 +94,7 @@ namespace IntroToSQL
                 InsertDog(conn, newestDog);
                 InsertDog(conn, newerestDog);
                 GetAllDogs(conn);
-               
+
                 // close the conneciton 
             }
 
