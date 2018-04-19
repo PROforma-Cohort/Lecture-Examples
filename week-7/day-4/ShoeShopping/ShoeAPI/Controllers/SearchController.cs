@@ -5,15 +5,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Data.Entity;
+using ShoeAPI.ViewModels;
+
 namespace ShoeAPI.Controllers
 {
 
-    public class SearchParams
-    {
-        public string Style { get; set; }
-        public int? Size { get; set; }
-        public string Color { get; set; }
-    }
 
     public class SearchController : ApiController
     {
