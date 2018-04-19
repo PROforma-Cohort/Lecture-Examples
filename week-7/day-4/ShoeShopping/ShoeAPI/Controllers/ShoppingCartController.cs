@@ -16,6 +16,7 @@ namespace ShoeAPI.Controllers
 
     public class ShoppingCartController : ApiController
     {
+        // Using a better URL for the shopping cart
         [HttpPost]
         [Route("api/shoppingcart/{userId}")]
         public IHttpActionResult AddShoeToShopping([FromUri] int userId, [FromBody]ShoppingCartViewModel data)
