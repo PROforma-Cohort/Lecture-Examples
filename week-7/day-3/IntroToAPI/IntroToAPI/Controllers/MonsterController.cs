@@ -12,6 +12,7 @@ namespace IntroToAPI.Controllers
 {
     public class MonsterController : ApiController
     {
+        [Route("monsters/under/bed")]
         public IEnumerable<Monster> Get()
         {
             var db = new MonstersContext();
