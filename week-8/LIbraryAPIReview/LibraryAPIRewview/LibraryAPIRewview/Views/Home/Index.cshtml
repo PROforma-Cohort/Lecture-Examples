@@ -1,0 +1,8 @@
+﻿<div class="jumbotron" ng-app="helloWorldApp" ng-controller="mainController">
+    <h1>You loaded this page at {{currentTime}} </h1>
+    <div>
+        <div ng-repeat="book in books track by $index">
+            {{book.BookName}}, written by {{ book.AuthorName}}, Genre: {{book.GenreName}}
+        </div>
+    </div>
+</div>
