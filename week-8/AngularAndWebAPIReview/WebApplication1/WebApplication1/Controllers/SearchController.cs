@@ -13,14 +13,23 @@ namespace WebApplication1.Controllers
 
         public IHttpActionResult Get(string title)
         {
-            var db = new LibraryContext();
-            var results = db.Books.Where(w => title.Contains(w.Title)).ToList();
-            if (results.Count == 0)
+            try
             {
-                return NotFound();
-            } else
-            {            
-                return Ok(results);
+                var db = new LibraryContext();
+                var results = db.Books.Where(w => title.Contains(w.Title)).ToList();
+                if (results.Count == 0)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(results);
+                }
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                return InternalServerError(ex);
             }
         }
     }
