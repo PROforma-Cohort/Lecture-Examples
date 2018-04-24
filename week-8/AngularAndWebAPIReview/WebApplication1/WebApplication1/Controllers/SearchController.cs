@@ -16,7 +16,7 @@ namespace WebApplication1.Controllers
             try
             {
                 var db = new LibraryContext();
-                var results = db.Books.Where(w => title.Contains(w.Title)).ToList();
+                var results = db.Books.Where(w => w.Title.Contains(title)).ToList();
                 if (results.Count == 0)
                 {
                     return NotFound();
