@@ -1,3 +1,26 @@
 ﻿<div ng-app="main" ng-controller="searchController">
-    <h1>{{welcomeMessage}}</h1>
+    <div class="jumbotron">
+        <h1>{{welcomeMessage}}</h1>
+    </div>
+    <!--this will be ther!-->
+    @* display a list of books *@
+    <input type="text" name="name" value="" ng-model="searchTerm" />
+    <button class="btn btn-info" ng-click="searchBooks()"><i class="glyphicon glyphicon-search"></i>&nbsp;Search</button>
+    <br />
+    <input type="text" name="name" value="" ng-model="email" placeholder="Enter email to checkout" />
+    <br />
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="book in books track by $index">
+            <div ng-show="book.IsCheckedOut">
+                <button class="btn btn-warning">Check in</button>
+                <span class="badge">Due back {{book.DueBackDate}}</span>
+            </div>
+            <button ng-hide="book.IsCheckedOut" ng-click="checkOutBook(book)" class="btn btn-success">Check out</button>
+            {{book.Title}}
+            <div ng-show="book.Message">
+                &nbsp;--&nbsp;
+            {{book.Message}}
+            </div>
+        </li>
+    </ul>
 </div>

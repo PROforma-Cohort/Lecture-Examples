@@ -24,13 +24,17 @@ namespace ShoeAPI.Controllers
     public class ShoppingCartViewModel
     {
         public int ShoeId { get; set; }
-        public int Quantity { get; set; }
+        public int Quantity { get; set; } = 0;
     }
 
     public class CheckOutViewModel
     {
         public string Email { get; set; }
     }
+
+    /*
+     
+         */
 
     public class ShoppingCartController : ApiController
     {
