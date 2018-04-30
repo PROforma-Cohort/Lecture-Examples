@@ -7,6 +7,8 @@ namespace VideoGameArcade
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            var x = new int[] { 1, 2, 3, 4, 5 };
+
             filters.Add(new HandleErrorAttribute());
         }
     }
