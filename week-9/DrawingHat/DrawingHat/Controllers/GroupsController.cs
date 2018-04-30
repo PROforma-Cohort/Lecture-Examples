@@ -31,6 +31,7 @@ namespace DrawingHat.Controllers
                 var rv = new List<Groups>();
                 var loopTimes = people.Count / groupSize;
                 // get the even groups
+                var availibleStudents = new Queue<People>(people);
 
                 for (int i = 0; i < loopTimes; i++)
                 {
@@ -42,10 +43,19 @@ namespace DrawingHat.Controllers
 
                     for (int j = 0; j < groupSize; j++)
                     {
-                        newGroup.People.Add(people.First());
-                        people.RemoveAt(0);
+                        newGroup.People.Add(availibleStudents.Dequeue());
                     }
                     rv.Add(newGroup);
+                }
+
+                var pos = 0; 
+                while (availibleStudents.Count > 0)
+                {
+                    if (pos >= rv.Count)
+                    {
+                        pos = 0;
+                    }
+                    rv[pos++].People.Add(availibleStudents.Dequeue());
                 }
 
                 return Ok(rv);

@@ -9,7 +9,7 @@
         </ul>
     </section>
     <section>
-        <input type="number" ng-model="groupSize" min="2" max="{{names.length}}" />
+        <input type="number" ng-model="groupSize" min="2" max="{{(names.length/2) + 1}}" />
         <input type="text" ng-model="groupName" />
         <button class="btn btn-success" ng-click="createGroups()">Create Groups</button>
     </section>
