@@ -33,5 +33,19 @@ namespace DrawingHat.Controllers
                 return Ok(person);
             }
         }
+
+        [HttpDelete]
+        [Route("api/people/{id}")]
+        public IHttpActionResult DeletePerson([FromUri] int id)
+        {
+            using(var db = new HatContext())
+            {
+                var person = db.People.SingleOrDefault(s => s.Id == id);
+                if (person == null) return NotFound();
+                db.People.Remove(person);
+                db.SaveChanges();
+                return Ok();
+            }
+        }
     }
 }

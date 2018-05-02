@@ -24,7 +24,15 @@
                 loadLatestList();
             })
         }
-
+        $scope.deletePerson = (person) => {
+            // TODO: Add person
+            $http({
+                method: "DELETE",
+                url: "/api/people/"+person.Id,
+            }).then(resp => {
+                loadLatestList();
+            })
+        }
 
         $scope.createGroups = () => {
             $http({

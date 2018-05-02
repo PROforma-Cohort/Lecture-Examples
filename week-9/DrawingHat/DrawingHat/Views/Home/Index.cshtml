@@ -5,7 +5,17 @@
             <input type="text" ng-model="newPersonName" /> <button class="btn btn-info">+</button>
         </form>
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="person in names track by $index">{{person.Name}}</li>
+            <li class="list-group-item" ng-repeat="person in names track by $index">
+                <div class="row">
+                    <div class="col-md-10">
+                        {{person.Name}}
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-danger" ng-click="deletePerson(person)"><i class="glyphicon glyphicon-erase"></i></button>
+                    </div>
+                </div>
+
+            </li>
         </ul>
     </section>
     <section>
@@ -16,9 +26,9 @@
     <section>
         <div ng-repeat="group in groups track by $index">
             <ul>
-                <li ng-repeat="person in group.People track by $index">{{person.Name}}</li>       
+                <li ng-repeat="person in group.People track by $index">{{person.Name}}</li>
             </ul>
-            <hr/>
+            <hr />
         </div>
     </section>
 </div>
