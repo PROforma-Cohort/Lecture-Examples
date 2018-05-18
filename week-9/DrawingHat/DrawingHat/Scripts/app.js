@@ -34,17 +34,28 @@
             })
         }
 
-        $scope.createGroups = () => {
+        const createGroup = (groupSize) => {
             $http({
                 method: "POST",
                 url: "/api/groups",
                 data: {
                     Name: $scope.groupName,
-                    Size: $scope.groupSize
+                    Size: groupSize
                 }
             }).then(resp => {
                 $scope.groups = resp.data;
             })
+        }
+
+        $scope.createGroups = () => {
+            createGroup($scope.groupSize)
+        }
+
+        $scope.divideIntoNumberOfGroups = () => {
+            // do a little math to get the group size,
+            const groupSize = Math.round($scope.names.length / $scope.numberOfGroups)
+            // call out existing funationality
+            createGroup(groupSize);
         }
 
         const init = () => {
